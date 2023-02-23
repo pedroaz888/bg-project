@@ -1,0 +1,52 @@
+<html>
+<head th:replace="~{base :: head}"></head>
+<body>
+
+
+
+<div th:replace="~{base :: logo}"></div>
+<div th:replace="~{base :: titulo('Lista dos Jogos')}"></div>
+
+
+<nav class="navbar navbar-expand bg-light d-flex justify-content-between mb-3">
+    <div class="navbar-nav">
+        <a class="nav-link active" href ="/index">Lista dos jogos</a>
+        <a class="nav-link active" href ="/preco">Menores preços</a>
+        <a class="nav-link active" href ="/notas">Melhores notas</a>
+
+        <form action=" lista" method="POST">
+            <input type="text" name="nomeDoJogo" placeholder="digite o nome do jogo" id="invalidCheck" required/>
+            <div class="invalid-feedback"></div>
+            <input class="waves-effect wave light btn" type = "submit" value="Buscar">
+        </form>
+    </div>
+    <a href="/dados/formulario"><button class="btn btn-outline-secondary">Adicione seu Jogos</button></a>
+</nav>
+
+<div  class="card mb-3" th:each = "dado : ${dados}">
+    <div class="card-header">Nome do Jogo: <p class="fw-bold fs-5" ><span  th:text="${dado.nomeDoJogo}"></span></div></p>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-sm-8 mb-3">
+
+                <div>Expectativas do jogo</div>
+                <div>
+                    <textarea class="form-control" th:text="${dado.descricao}">descrição das espectativas</textarea>
+                </div>
+                <div class="row">
+                    <div class="col-8 col-sm-10"> Preço:<span th:text ="${dado.preco}"></span></div>
+                    <div class="col-4 col-sm-2">Nota:<span th:text="${dado.nota}"></span></div>
+                </div>
+                <div >Loja:<span th:text="${dado.loja}"></span></div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div>
+                    <img class="img-thumbnail" th:src="${dado.urlImagem}" src=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

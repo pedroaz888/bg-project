@@ -1,0 +1,6 @@
+com\app\boardgames\dto\RequisicaoNovoJogo.class
+com\app\boardgames\model\DadosJogo.class
+com\app\boardgames\controller\JogosAddController.class
+com\app\boardgames\controller\IndexController.class
+com\app\boardgames\BoardgamesApplication.class
+com\app\boardgames\repository\DadosJogosRepository.class
