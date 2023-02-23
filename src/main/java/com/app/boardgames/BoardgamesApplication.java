@@ -11,8 +11,6 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 @EnableCaching
 @SpringBootApplication
 public class BoardgamesApplication {
-    public String PORT = System.getenv("PORT");
-
 
     public static void main(String[] args) {
         SpringApplication.run(BoardgamesApplication.class, args);
