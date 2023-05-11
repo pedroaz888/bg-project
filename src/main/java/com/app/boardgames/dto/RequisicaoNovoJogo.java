@@ -1,10 +1,13 @@
 package com.app.boardgames.dto;
 
 import com.app.boardgames.model.DadosJogo;
+
+
 import javax.validation.constraints.NotBlank;
 
 //DTO clase que serve para receber infos do objetos
 //deve ser o mesmo name dos formularios
+
 public class RequisicaoNovoJogo {
 
     @NotBlank//NotBlank.requisicaoNovoJogo.nomeDoJogo = não pode estar em branco
