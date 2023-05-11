@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,8 +35,6 @@ public class JogosAddController {
     }
 
 
-
-
     @Transactional
     @PostMapping("/dados/novo")
     public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
@@ -46,7 +43,7 @@ public class JogosAddController {
         }
         DadosJogo dadosJogo = requisicao.toDadosJogos();
         dadosJogosRepository.save(dadosJogo);
-        return "redirect:index";
+        return "index";
     }
 
 }
