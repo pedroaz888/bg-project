@@ -18,61 +18,36 @@ import com.app.boardgames.dto.RequisicaoNovoJogo;
 import com.app.boardgames.model.DadosJogo;
 import com.app.boardgames.repository.DadosJogosRepository;
 
-//@Controller
-//@Repository
-//public class JogosAddController {
-//
-////-----------------@Autowired--------------------------------------------------
-//    //spring cria uma instância dessa classe
-//    // e vai utilizar essa classe para salvar os dados no banco de dados
-//
-//    @Autowired
-//    private DadosJogosRepository dadosJogosRepository;
-//
-//    @Transactional
-//    @GetMapping("/dados/formulario")
-//    public String formulario(RequisicaoNovoJogo requisicao) {
-//        return "dados/formulario";
-//    }
-//
-//
-//
-//
-//    @Transactional
-//    @PostMapping("/dados/novo")
-//    public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
-//        if(result.hasErrors()) {
-//            return "dados/formulario";
-//        }
-//        DadosJogo dadosJogo = requisicao.toDadosJogos();
-//        dadosJogosRepository.save(dadosJogo);
-//        return "redirect:index";
-//    }
-//
-//}
-
 @Controller
 @Repository
 public class JogosAddController {
+
+//-----------------@Autowired--------------------------------------------------
+    //spring cria uma instância dessa classe
+    // e vai utilizar essa classe para salvar os dados no banco de dados
 
     @Autowired
     private DadosJogosRepository dadosJogosRepository;
 
     @Transactional
     @GetMapping("/dados/formulario")
-    public String formulario(Model model) {
-        model.addAttribute("requisicaoNovoJogo", new RequisicaoNovoJogo());
+    public String formulario(RequisicaoNovoJogo requisicao) {
         return "dados/formulario";
     }
 
+
+
+
     @Transactional
     @PostMapping("/dados/novo")
-    public String novo(@Valid RequisicaoNovoJogo requisicao, BindingResult result) {
-        if (result.hasErrors()) {
+    public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
+        if(result.hasErrors()) {
             return "dados/formulario";
         }
         DadosJogo dadosJogo = requisicao.toDadosJogos();
         dadosJogosRepository.save(dadosJogo);
         return "redirect:index";
     }
+
 }
+
