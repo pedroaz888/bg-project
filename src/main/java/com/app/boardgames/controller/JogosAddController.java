@@ -43,7 +43,7 @@ public class JogosAddController {
         }
         DadosJogo dadosJogo = requisicao.toDadosJogos();
         dadosJogosRepository.save(dadosJogo);
-        return "index";
+        return "redirect:index";
     }
 
 }
