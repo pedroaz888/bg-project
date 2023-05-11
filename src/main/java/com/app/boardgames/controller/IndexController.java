@@ -31,16 +31,25 @@ public class IndexController {
     private DadosJogosRepository pedidoRepository;
 
 
+//    @Transactional
+//    @GetMapping("/index")
+//    public String index(Model model, Principal principal) {
+//
+//
+//        PageRequest paginacao = PageRequest.of(0,7);
+//
+//        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
+//        model.addAttribute("dados",dados);
+//
+//        return "index";
+//    }
+
     @Transactional
     @GetMapping("/index")
     public String index(Model model, Principal principal) {
-
-
-        PageRequest paginacao = PageRequest.of(0,7);
-
-        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
-        model.addAttribute("dados",dados);
-
+        PageRequest paginacao = PageRequest.of(0, 7);
+        List<DadosJogo> dados = pedidoRepository.findAll(paginacao);
+        model.addAttribute("dados", dados);
         return "index";
     }
 
