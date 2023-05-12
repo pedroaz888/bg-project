@@ -90,23 +90,13 @@ public class IndexController {
     }
 
     @Transactional
-    @DeleteMapping("/dados/{id}")
-    public String excluirJogo(@PathVariable long id, Model model) {
-        Optional<DadosJogo> optional = pedidoRepository.findById(id);
-        if (optional.isPresent()) {
-            pedidoRepository.deleteById(id);
-        } else {
-            model.addAttribute("error", "Jogo não encontrado");
-        }
+    @GetMapping("/dados/{id}")
+    public String excluirJogo(@PathVariable("id") Long id{
 
-        // Atualize o model com a lista atualizada de jogos após a exclusão
-        PageRequest paginacao = PageRequest.of(0, 7);
-        List<DadosJogo> dados = pedidoRepository.findAll();
-        model.addAttribute("dados", dados);
-
-        return "index";
+      pedidoRepository.deleteById(id);
+      return "redirect:index";
     }
-    
+
 
 }
 
