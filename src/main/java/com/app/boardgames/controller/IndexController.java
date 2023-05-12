@@ -44,7 +44,6 @@ public class IndexController {
         return "index";
     }
 
-
     @Transactional
     @RequestMapping("/preco")
     public String preco(Model model, Principal principal) {

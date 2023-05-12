@@ -1,6 +1,7 @@
 package com.app.boardgames.dto;
 
 import com.app.boardgames.model.DadosJogo;
+import org.hibernate.validator.constraints.URL;
 
 
 import javax.validation.constraints.NotBlank;

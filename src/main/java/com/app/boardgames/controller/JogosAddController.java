@@ -31,17 +31,15 @@ public class JogosAddController {
         return "dados/formulario";
     }
 
-
     @Transactional
     @PostMapping("/dados/novo")
-    public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
-        if(result.hasErrors()) {
+    public String novo(@Valid RequisicaoNovoJogo requisicao, BindingResult result) {
+        if (result.hasErrors()) {
             return "dados/formulario";
         }
         DadosJogo dadosJogo = requisicao.toDadosJogos();
         dadosJogosRepository.save(dadosJogo);
         return "redirect:index";
     }
-
 }
 
