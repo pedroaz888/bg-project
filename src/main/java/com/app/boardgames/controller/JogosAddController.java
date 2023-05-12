@@ -26,14 +26,14 @@ public class JogosAddController {
     private DadosJogosRepository dadosJogosRepository;
 
     @Transactional
-    @GetMapping("/dados/formulario")
+    @GetMapping("/formulario")
     public String formulario(RequisicaoNovoJogo requisicao) {
         return "dados/formulario";
     }
 
 
     @Transactional
-    @PostMapping("/dados/novo")
+    @PostMapping("/novo")
     public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
         if(result.hasErrors()) {
             return "dados/formulario";
