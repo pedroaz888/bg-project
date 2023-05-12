@@ -15,12 +15,12 @@
         </div>
         <div class="form-group mt-2">
             <label for="urlImagem" >Url da Imagem</label>
-            <input id="urlImagem" name="urlImagem" th:field="*{urlImagem}"th:errorclass="is-invalid"  class="form-control"  placeholder="Insira a url do seu jogo favorito"/>
+            <input id="urlImagem" name="urlImagem" th:field="*{urlImagem}"th:errorclass="is-invalid"  class="form-control"  placeholder="Escolha uma imagem na internet e com botão direito copie o endereço da URL"/>
             <div class="invalid-feedback"th:errors ="*{urlImagem}"></div>
         </div>
         <div class="form-group mt-2">
             <label for="preco">Preço</label>
-            <input id="preco" name="preco" th:field="*{preco}" class="form-control" placeholder="Preço pago no jogo"/>
+            <input id="preco" name="preco" th:field="R$*{preco}" class="form-control" placeholder="Preço pago no jogo"/>
 
         </div>
         <div class="form-group mt-2">
