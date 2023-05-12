@@ -28,7 +28,7 @@ public class JogosAddController {
     @Transactional
     @GetMapping("templates/formulario")
     public String formulario(RequisicaoNovoJogo requisicao) {
-        return "/formulario";
+        return "formulario";
     }
 
 
