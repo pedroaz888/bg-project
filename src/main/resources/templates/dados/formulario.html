@@ -5,6 +5,7 @@
 <div th:replace="~{base :: logo}"></div>
 <div th:replace="~{base :: titulo('Mostre seu jogo favorito')}"></div>
 
+<div class="container">
 <div class="card mt-3">
     <form th:object="${requisicaoNovoJogo}"class="card-body" action ="/novo" method="POST">
         <div class="form-group">
@@ -42,6 +43,7 @@
 
         </div>
     </form>
+</div>
 </div>
 </body>
 
