@@ -41,12 +41,10 @@
                 <div >Loja:<span th:text="${dado.loja}"></span></div>
 
                 <!-- Botão de Excluir -->
-                <form th:action="@{/dados/{id}(id=${dado.id})}" method="post">
-                    <!-- Use th:value para definir o ID do jogo -->
+                <form id="formExcluir" th:action="@{/dados/{id}(id=${dado.id})}" method="post">
                     <input type="hidden" name="_method" value="DELETE" />
                     <input type="hidden" name="id" th:value="${dado.id}" />
                     <button type="submit" class="btn btn-danger">Excluir</button>
-
                 </form>
 
             </div>
@@ -64,3 +62,4 @@
 
 </body>
 </html>
+
