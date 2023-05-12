@@ -26,8 +26,6 @@ public interface DadosJogosRepository extends CrudRepository<DadosJogo,Long> {
 
     List<DadosJogo> findByNomeDoJogoEqualsIgnoreCase(String nome);
 
-
-    void delete(Optional<DadosJogo> dado);
 }
 
 
