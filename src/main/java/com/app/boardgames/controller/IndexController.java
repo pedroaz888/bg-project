@@ -76,7 +76,7 @@ public class IndexController {
     }
 
     @Transactional
-    @RequestMapping(value = "/dados/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping("/dados/{id}")
     public RedirectView excluirJogo(@PathVariable long id) {
 
        Optional<DadosJogo>optional = pedidoRepository.findById(id);

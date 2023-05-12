@@ -56,6 +56,17 @@
     </div>
 </div>
 </div>
+
+            <script>
+                    function excluirJogo(event) {
+                        event.preventDefault(); // Evita o envio padrão do formulário
+
+                        if (confirm('Tem certeza que deseja excluir o jogo?')) {
+                            var form = document.getElementById('formExcluir');
+                            form.submit(); // Envia o formulário
+                        }
+                    }
+            </script>
 </div>
 </body>
 </html>
