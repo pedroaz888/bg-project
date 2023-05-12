@@ -41,9 +41,9 @@
                 <div >Loja:<span th:text="${dado.loja}"></span></div>
 
                 <!-- Botão de Excluir -->
-                <form th:action="@{/dados/{id}(id=${dado.id})}" method="post">
+                <form th:action="@{/dados/{id}(id=${dado.id})}" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger" value="Excluir">
+                    <input type="submit" class="btn btn-danger" value="Excluir Jogo">
                 </form>
 
             </div>
