@@ -32,7 +32,7 @@ public class JogosAddController {
     }
 
     @Transactional
-    @PostMapping("/dados/novo")
+    @PostMapping("/novo")
     public String novo(@Valid RequisicaoNovoJogo requisicao, BindingResult result) {
         if (result.hasErrors()) {
             return "dados/formulario";
