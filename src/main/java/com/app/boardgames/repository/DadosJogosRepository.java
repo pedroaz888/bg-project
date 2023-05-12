@@ -18,7 +18,7 @@ import com.app.boardgames.model.DadosJogo;
 public interface DadosJogosRepository extends CrudRepository<DadosJogo,Long> {
 
 
-    List<DadosJogo> findAll(Pageable sort);
+    List<DadosJogo> findAll();
 
 
 

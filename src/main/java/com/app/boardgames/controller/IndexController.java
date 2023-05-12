@@ -58,12 +58,26 @@ public class IndexController {
         Sort sort = Sort.by("nota").descending();
         PageRequest paginacao = PageRequest.of(0,7,sort);
 
-        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
+        List<DadosJogo>dados = pedidoRepository.findAll();
         model.addAttribute("dados",dados);
 
         return "index";
 
     }
+
+//    @Transactional
+//    @RequestMapping("/notas")
+//    public String notas(Model model, Principal principal) {
+//
+//        Sort sort = Sort.by("nota").descending();
+//        PageRequest paginacao = PageRequest.of(0,7,sort);
+//
+//        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
+//        model.addAttribute("dados",dados);
+//
+//        return "index";
+//
+//    }
 
 
     @Transactional
