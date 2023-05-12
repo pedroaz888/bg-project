@@ -93,8 +93,10 @@ public class IndexController {
        if(optional.isPresent()){
            pedidoRepository.deleteById(id);
 
-           return "index";
+           return "redirect:index";
+
        }else{
+
            return "error";
        }
 
