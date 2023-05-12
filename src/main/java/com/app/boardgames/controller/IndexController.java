@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
@@ -66,21 +67,6 @@ public class IndexController {
 
     }
 
-//    @Transactional
-//    @RequestMapping("/notas")
-//    public String notas(Model model, Principal principal) {
-//
-//        Sort sort = Sort.by("nota").descending();
-//        PageRequest paginacao = PageRequest.of(0,7,sort);
-//
-//        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
-//        model.addAttribute("dados",dados);
-//
-//        return "index";
-//
-//    }
-
-
     @Transactional
     @RequestMapping("/lista")
     public ModelAndView pesquisar (@RequestParam("nomeDoJogo")String nomeJogo){
@@ -92,10 +78,13 @@ public class IndexController {
 
     @Transactional
     @DeleteMapping("/dados/{id}")
-    public String excluirJogo(@PathVariable(value = "id") Long id){
-
-      pedidoRepository.deleteById(id);
-      return "redirect:index";
+    public ModelAndView remover(@PathVariable Long id) {
+        Optional<DadosJogo> optional = pedidoRepository.findById(id);
+        if (optional.isPresent()) {
+            pedidoRepository.deleteById(id);
+            return new ModelAndView("redirect:/index");
+        }
+        return new ModelAndView("error");
     }
 
 
