@@ -31,7 +31,7 @@ public class IndexController {
 
         PageRequest paginacao = PageRequest.of(0,7);
 
-        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
+        List<DadosJogo>dados = pedidoRepository.findAll();
         model.addAttribute("dados",dados);
 
         return "index";
@@ -44,7 +44,7 @@ public class IndexController {
         Sort sort = Sort.by("preco").ascending();
         PageRequest paginacao = PageRequest.of(0,7,sort);
 
-        List<DadosJogo>dados = pedidoRepository.findAll(paginacao);
+        List<DadosJogo>dados = pedidoRepository.findAll();
         model.addAttribute("dados",dados);
 
         return "index";
@@ -101,14 +101,12 @@ public class IndexController {
 
         // Atualize o model com a lista atualizada de jogos após a exclusão
         PageRequest paginacao = PageRequest.of(0, 7);
-        List<DadosJogo> dados = pedidoRepository.findAll(paginacao);
+        List<DadosJogo> dados = pedidoRepository.findAll();
         model.addAttribute("dados", dados);
 
         return "index";
     }
-
-
-
+    
 
 }
 
