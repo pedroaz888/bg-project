@@ -42,8 +42,8 @@
 
                 <!-- Botão de Excluir -->
                 <form th:action="@{/dados/{id}(id=${dado.id})}" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                    <button type="submit">Excluir</button>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" class="btn btn-danger" value="Excluir">
                 </form>
 
             </div>
