@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -19,12 +20,14 @@ import com.app.boardgames.model.DadosJogo;
 public interface DadosJogosRepository extends CrudRepository<DadosJogo,Long> {
 
 
-    List<DadosJogo> findAll();
+    List<DadosJogo> findAll(PageRequest paginacao);
 
 
 
 
     List<DadosJogo> findByNomeDoJogoEqualsIgnoreCase(String nome);
+
+
 
 }
 
