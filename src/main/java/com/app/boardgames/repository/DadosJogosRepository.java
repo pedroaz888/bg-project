@@ -20,7 +20,7 @@ import com.app.boardgames.model.DadosJogo;
 public interface DadosJogosRepository extends CrudRepository<DadosJogo,Long> {
 
 
-    List<DadosJogo> findAll(PageRequest paginacao);
+    List<DadosJogo> findAll(Pageable sort);
 
 
 
