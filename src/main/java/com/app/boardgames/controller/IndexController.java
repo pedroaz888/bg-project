@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.app.boardgames.model.DadosJogo;
 import com.app.boardgames.repository.DadosJogosRepository;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 @Repository
@@ -76,23 +77,20 @@ public class IndexController {
 
     @Transactional
     @DeleteMapping("/dados/{id}")
-    public String excluirJogo(@PathVariable long id) {
+    public RedirectView excluirJogo(@PathVariable long id) {
 
        Optional<DadosJogo>optional = pedidoRepository.findById(id);
        if(optional.isPresent()){
            pedidoRepository.deleteById(id);
 
-           return "redirect:index";
-
-       }else{
-
-           return "error";
+           return new RedirectView("/index");
+       } else {
+           return new RedirectView("/error");
        }
-
-
     }
 
 
-}
 
+
+}
 
