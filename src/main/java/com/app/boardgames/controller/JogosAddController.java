@@ -28,7 +28,7 @@ public class JogosAddController {
     @Transactional
     @GetMapping("templates/formulario")
     public String formulario(RequisicaoNovoJogo requisicao) {
-        return "dados/formulario";
+        return "/formulario";
     }
 
 
@@ -36,7 +36,7 @@ public class JogosAddController {
     @PostMapping("templates/novo")
     public String novo(@Valid RequisicaoNovoJogo requisicao,BindingResult result) {
         if(result.hasErrors()) {
-            return "dados/formulario";
+            return "/formulario";
         }
         DadosJogo dadosJogo = requisicao.toDadosJogos();
         dadosJogosRepository.save(dadosJogo);
