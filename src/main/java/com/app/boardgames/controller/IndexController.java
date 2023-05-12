@@ -79,9 +79,9 @@ public class IndexController {
     @Transactional
     @PostMapping("/dados/{id}")
     public String excluirJogo(@PathVariable Long id) {
-        Optional<DadosJogo> optional = pedidoRepository.findById(id);
-        if (optional.isPresent()) {
-            DadosJogo dado = optional.get();
+        Optional<DadosJogo> optionalDado = pedidoRepository.findById(id);
+        if (optionalDado.isPresent()) {
+            DadosJogo dado = optionalDado.get();
             pedidoRepository.delete(dado);
             return "redirect:/index";
         }
