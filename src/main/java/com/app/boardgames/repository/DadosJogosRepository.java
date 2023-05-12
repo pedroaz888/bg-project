@@ -1,6 +1,7 @@
 package com.app.boardgames.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,6 +27,7 @@ public interface DadosJogosRepository extends CrudRepository<DadosJogo,Long> {
     List<DadosJogo> findByNomeDoJogoEqualsIgnoreCase(String nome);
 
 
+    void delete(Optional<DadosJogo> dado);
 }
 
 
