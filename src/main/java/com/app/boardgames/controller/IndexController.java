@@ -3,6 +3,7 @@ package com.app.boardgames.controller;
 import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -90,8 +91,8 @@ public class IndexController {
     }
 
     @Transactional
-    @GetMapping("/dados/{id}")
-    public String excluirJogo(@PathVariable("id") Long id{
+    @DeleteMapping("/dados/{id}")
+    public String excluirJogo(@PathVariable(value = "id") Long id){
 
       pedidoRepository.deleteById(id);
       return "redirect:index";
@@ -99,4 +100,3 @@ public class IndexController {
 
 
 }
-
