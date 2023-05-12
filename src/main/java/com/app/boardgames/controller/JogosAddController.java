@@ -1,8 +1,5 @@
 package com.app.boardgames.controller;
 
-
-import java.beans.Transient;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
