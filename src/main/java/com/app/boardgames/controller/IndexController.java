@@ -78,13 +78,13 @@ public class IndexController {
 
     @Transactional
     @DeleteMapping("/dados/{id}")
-    public ModelAndView remover(@PathVariable Long id) {
+    public String excluirJogo(@PathVariable Long id) {
         Optional<DadosJogo> optional = pedidoRepository.findById(id);
         if (optional.isPresent()) {
             pedidoRepository.deleteById(id);
-            return new ModelAndView("redirect:/index");
+            return "redirect:/index"; // Redireciona para a página index.html
         }
-        return new ModelAndView("error");
+        return "error";
     }
 
 
