@@ -38,14 +38,14 @@
                     <div class="col-8 col-sm-10"> Preço:<span th:text ="${dado.preco}"></span></div>
                     <div class="col-4 col-sm-2">Nota:<span th:text="${dado.nota}"></span></div>
                 </div>
-                <div >Loja:<span th:text="${dado.loja}"></span></div>
+                <div >Loja:<span th:text="${dado.loja}"></span></div></br></br></br></br></br></br>
 
                 <!-- Botão de Excluir -->
-                <form th:action="@{/dados/{id}(id=${dado.id})}" th:method="POST">
-                    <input type="hidden" name="_method" value="DELETE" />
-                    <input type="hidden" name="id" th:value="${dado.id}" />
-                    <button type="submit" class="btn btn-danger">Excluir</button>
-                </form>
+<!--                <form th:action="@{/dados/{id}(id=${dado.id})}" th:method="POST">-->
+<!--                    <input type="hidden" name="_method" value="DELETE" />-->
+<!--                    <input type="hidden" name="id" th:value="${dado.id}" />-->
+<!--                    <button type="submit" class="btn btn-danger">Excluir</button>-->
+<!--                </form>-->
 
 
             </div>

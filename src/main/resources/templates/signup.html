@@ -1,0 +1,37 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{base :: head}"></head>
+<body>
+<div th:replace="~{base :: logo}"></div>
+<div th:replace="~{base :: titulo('Faça seu Cadastro')}"></div>
+
+
+</br></br>
+<div class="container">
+    <div class="form-group">
+        <form th:action="@{/signup}" method="POST" th:object="${user}">
+
+            <label for="username">Cadastre um usuário:</label>
+            <input id="username" name="username" class="form-control" placeholder="Coloque um nome de usuário" required><br>
+
+            <label for="password">Cadastre uma senha:</label>
+            <input id="password" name="password" class="form-control" placeholder="Coloque uma senha" required><br>
+
+            <label for="password">Cadastre um email:</label>
+            <input id="email" name="email" class="form-control" placeholder="Coloque um email" required><br>
+
+
+            <button class="btn btn-primary" type="submit">Signup</button>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>    <
+
+
+</div>
+</body>
+
+</html>
+

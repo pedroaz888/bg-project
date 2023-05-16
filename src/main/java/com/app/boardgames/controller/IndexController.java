@@ -76,16 +76,16 @@ public class IndexController {
         return modelAndView;
     }
 
-    @Transactional
-    @PostMapping("/dados/{id}")
-    public String excluirJogo(@PathVariable Long id) {
-        Optional<DadosJogo> optionalDado = pedidoRepository.findById(id);
-        if (optionalDado.isPresent()) {
-            DadosJogo dado = optionalDado.get();
-            pedidoRepository.delete(dado);
-            return "redirect:/index";
-        }
-        return "error";
-    }
+//    @Transactional
+//    @PostMapping("/dados/{id}")
+//    public String excluirJogo(@PathVariable Long id) {
+//        Optional<DadosJogo> optionalDado = pedidoRepository.findById(id);
+//        if (optionalDado.isPresent()) {
+//            DadosJogo dado = optionalDado.get();
+//            pedidoRepository.delete(dado);
+//            return "redirect:/index";
+//        }
+//        return "error";
+//    }
 
 }

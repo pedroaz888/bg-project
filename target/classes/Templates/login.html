@@ -1,0 +1,30 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{base :: head}"></head>
+<body>
+<div th:replace="~{base :: logo}"></div>
+<div th:replace="~{base :: titulo('Faça seu login')}"></div>
+</br></br>
+
+<div class="container">
+
+    <form method="POST" action="/login">
+        <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Coloque um nome de usuário cadastrado" required/><br>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="form-control"placeholder="Coloque a senha cadastrada" required/></br>
+        </div>
+        <button  class="btn btn-primary" type="submit">Login</button>
+    </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
